@@ -10,8 +10,10 @@ sources:
         columns:
           - name: channel_name
             description: "Name of the channel"
+            data_type: string
           - name: channel_id
             description: "Unique identifier for the channel"
+            data_type: integer
 
       - name: customers
         description: "Customers data"
@@ -20,12 +22,16 @@ sources:
         columns:
           - name: customer_id
             description: "Unique identifier for the customer"
+            data_type: integer
           - name: first_name
             description: "Customer's first name"
+            data_type: string
           - name: last_name
             description: "Customer's last name"
+            data_type: string
           - name: email
             description: "Customer's email address"
+            data_type: string
 
       - name: products
         description: "Products data"
@@ -34,12 +40,16 @@ sources:
         columns:
           - name: name
             description: "Product name"
+            data_type: string
           - name: city
             description: "City related to the product"
+            data_type: string
           - name: price
             description: "Price of the product"
+            data_type: decimal
           - name: product_id
             description: "Unique identifier for the product"
+            data_type: integer
 
       - name: resellers_type1
         description: "Type 1 Resellers data"
@@ -48,26 +58,37 @@ sources:
         columns:
           - name: Product name
             description: "Name of the product sold"
+            data_type: string
           - name: Quantity
             description: "Quantity sold"
+            data_type: integer
           - name: Total amount
             description: "Total amount of the sale"
+            data_type: decimal
           - name: Sales Channel
             description: "Sales channel used"
+            data_type: string
           - name: Customer First Name
             description: "Customer's first name"
+            data_type: string
           - name: Customer Last Name
             description: "Customer's last name"
+            data_type: string
           - name: Customer Email
             description: "Customer's email address"
+            data_type: string
           - name: Series City
             description: "City in the series data"
+            data_type: string
           - name: Created Date
             description: "Date the entry was created"
+            data_type: timestamp
           - name: Reseller ID
             description: "Unique identifier for the reseller"
+            data_type: integer
           - name: Transaction ID
             description: "Unique identifier for the transaction"
+            data_type: integer
 
       - name: resellers
         description: "Resellers data"
@@ -76,7 +97,10 @@ sources:
         columns:
           - name: reseller_id
             description: "Unique identifier for the reseller"
+            data_type: integer
           - name: reseller_name
             description: "Name of the reseller"
+            data_type: string
           - name: commission_pct
             description: "Commission percentage for the reseller"
+            data_type: decimal
