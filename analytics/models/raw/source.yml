@@ -11,9 +11,14 @@ sources:
           - name: channel_name
             description: "Name of the channel"
             data_type: string
+            tests:
+              - not_null
           - name: channel_id
             description: "Unique identifier for the channel"
             data_type: integer
+            tests:
+              - unique
+              - not_null
 
       - name: customers
         description: "Customers data"
@@ -23,15 +28,24 @@ sources:
           - name: customer_id
             description: "Unique identifier for the customer"
             data_type: integer
+            tests:
+              - unique
+              - not_null
           - name: first_name
             description: "Customer's first name"
             data_type: string
+            tests:
+              - not_null
           - name: last_name
             description: "Customer's last name"
             data_type: string
+            tests:
+              - not_null
           - name: email
             description: "Customer's email address"
             data_type: string
+            tests:
+              - not_null
 
       - name: products
         description: "Products data"
@@ -41,15 +55,24 @@ sources:
           - name: name
             description: "Product name"
             data_type: string
+            tests:
+              - not_null
           - name: city
             description: "City related to the product"
             data_type: string
+            tests:
+              - not_null
           - name: price
             description: "Price of the product"
             data_type: decimal
+            tests:
+              - not_null
           - name: product_id
             description: "Unique identifier for the product"
             data_type: integer
+            tests:
+              - unique
+              - not_null
 
       - name: resellers_type1
         description: "Type 1 Resellers data"
@@ -59,36 +82,58 @@ sources:
           - name: Product name
             description: "Name of the product sold"
             data_type: string
+            tests:
+              - not_null
           - name: Quantity
             description: "Quantity sold"
             data_type: integer
+            tests:
+              - not_null
           - name: Total amount
             description: "Total amount of the sale"
             data_type: decimal
+            tests:
+              - not_null
           - name: Sales Channel
             description: "Sales channel used"
             data_type: string
+            tests:
+              - not_null
           - name: Customer First Name
             description: "Customer's first name"
             data_type: string
+            tests:
+              - not_null
           - name: Customer Last Name
             description: "Customer's last name"
             data_type: string
+            tests:
+              - not_null
           - name: Customer Email
             description: "Customer's email address"
             data_type: string
+            tests:
+              - not_null
           - name: Series City
             description: "City in the series data"
             data_type: string
+            tests:
+              - not_null
           - name: Created Date
             description: "Date the entry was created"
             data_type: timestamp
+            tests:
+              - not_null
           - name: Reseller ID
             description: "Unique identifier for the reseller"
             data_type: integer
+            tests:
+              - not_null
           - name: Transaction ID
             description: "Unique identifier for the transaction"
             data_type: integer
+            tests:
+              - unique
 
       - name: resellers
         description: "Resellers data"
@@ -98,9 +143,16 @@ sources:
           - name: reseller_id
             description: "Unique identifier for the reseller"
             data_type: integer
+            tests:
+              - unique
+              - not_null
           - name: reseller_name
             description: "Name of the reseller"
             data_type: string
+            tests:
+              - not_null
           - name: commission_pct
             description: "Commission percentage for the reseller"
             data_type: decimal
+            tests:
+              - not_null
