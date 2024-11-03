@@ -1,0 +1,82 @@
+version: 2
+
+sources:
+  - name: parquet_source
+    tables:
+      - name: channels
+        description: "Channels data"
+        meta:
+          external_location: "read_parquet('{{ env_var('CHANNELS_PARQUET_PATH')}}')"
+        columns:
+          - name: channel_name
+            description: "Name of the channel"
+          - name: channel_id
+            description: "Unique identifier for the channel"
+
+      - name: customers
+        description: "Customers data"
+        meta:
+          external_location: "read_parquet('{{ env_var('CUSTOMERS_PARQUET_PATH') }}')"
+        columns:
+          - name: customer_id
+            description: "Unique identifier for the customer"
+          - name: first_name
+            description: "Customer's first name"
+          - name: last_name
+            description: "Customer's last name"
+          - name: email
+            description: "Customer's email address"
+
+      - name: products
+        description: "Products data"
+        meta:
+          external_location: "read_parquet('{{ env_var('PRODUCTS_PARQUET_PATH') }}')"
+        columns:
+          - name: name
+            description: "Product name"
+          - name: city
+            description: "City related to the product"
+          - name: price
+            description: "Price of the product"
+          - name: product_id
+            description: "Unique identifier for the product"
+
+      - name: resellers_type1
+        description: "Type 1 Resellers data"
+        meta:
+          external_location: "read_parquet('{{ env_var('RESELLERS_TYPE1_PARQUET_PATH') }}')"
+        columns:
+          - name: Product name
+            description: "Name of the product sold"
+          - name: Quantity
+            description: "Quantity sold"
+          - name: Total amount
+            description: "Total amount of the sale"
+          - name: Sales Channel
+            description: "Sales channel used"
+          - name: Customer First Name
+            description: "Customer's first name"
+          - name: Customer Last Name
+            description: "Customer's last name"
+          - name: Customer Email
+            description: "Customer's email address"
+          - name: Series City
+            description: "City in the series data"
+          - name: Created Date
+            description: "Date the entry was created"
+          - name: Reseller ID
+            description: "Unique identifier for the reseller"
+          - name: Transaction ID
+            description: "Unique identifier for the transaction"
+
+      - name: resellers
+        description: "Resellers data"
+        meta:
+          external_location: "read_parquet('{{ env_var('RESELLERS_PARQUET_PATH') }}')"
+        columns:
+          - name: reseller_id
+            description: "Unique identifier for the reseller"
+          - name: reseller_name
+            description: "Name of the reseller"
+          - name: commission_pct
+            description: "Commission percentage for the reseller"
