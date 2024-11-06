@@ -20,3 +20,8 @@ models:
   analytics:
     raw:
       +materialized: table
+
+tests:
+  singular:
+    - tests/test_invalid_email.sql
+    - tests/test_product_prices_positive.sql

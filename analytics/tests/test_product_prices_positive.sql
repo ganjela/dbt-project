@@ -2,7 +2,7 @@ WITH negative_prices AS (
     SELECT
         product_id,
         price
-    FROM {{ ref('products') }}
+    FROM {{ ref('raw_products') }}
     WHERE price < 0
 )
 
