@@ -75,67 +75,56 @@ sources:
               - unique
               - not_null
 
-      # TODO
-      # - name: resellers_type1
-      #   description: "Type 1 Resellers data"
-      #   meta:
-      #     external_location: "read_parquet('{{ env_var('RESELLERS_TYPE1_PARQUET_PATH') }}')"
-      #   columns:
-      #     - name: "Product name"
-      #       description: "Name of the product sold"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Quantity"
-      #       description: "Quantity sold"
-      #       data_type: integer
-      #       tests:
-      #         - not_null
-      #     - name: "Total amount"
-      #       description: "Total amount of the sale"
-      #       data_type: decimal
-      #       tests:
-      #         - not_null
-      #     - name: "Sales Channel"
-      #       description: "Sales channel used"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Customer First Name"
-      #       description: "Customer's first name"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Customer Last Name"
-      #       description: "Customer's last name"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Customer Email"
-      #       description: "Customer's email address"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Series City"
-      #       description: "City in the series data"
-      #       data_type: string
-      #       tests:
-      #         - not_null
-      #     - name: "Created Date"
-      #       description: "Date the entry was created"
-      #       data_type: timestamp
-      #       tests:
-      #         - not_null
-      #     - name: "Reseller ID"
-      #       description: "Unique identifier for the reseller"
-      #       data_type: integer
-      #       tests:
-      #         - not_null
-      #     - name: "Transaction ID"
-      #       description: "Unique identifier for the transaction"
-      #       data_type: integer
-      #       tests:
-      #         - unique
+      
+      - name: resellers_type1
+        description: "Type 1 Resellers data"
+        meta:
+          external_location: "{{ env_var('RESELLERS_TYPE1_PARQUET_PATH') }}"
+        columns:
+          - name: "\"Product name\""
+            description: "Name of the product sold"
+            tests:
+              - not_null
+          - name: "\"Quantity\""
+            description: "Quantity sold"
+            tests:
+              - not_null
+          - name: "\"Total amount\""
+            description: "Total amount of the sale"
+            tests:
+              - not_null
+          - name: "\"Sales Channel\""
+            description: "Sales channel used"
+            tests:
+              - not_null
+          - name: "\"Customer First Name\""
+            description: "Customer's first name"
+            tests:
+              - not_null
+          - name: "\"Customer Last Name\""
+            description: "Customer's last name"
+            tests:
+              - not_null
+          - name: "\"Customer Email\""
+            description: "Customer's email address"
+            tests:
+              - not_null
+          - name: "\"Series City\""
+            description: "City in the series data"
+            tests:
+              - not_null
+          - name: "\"Created Date\""
+            description: "Date the entry was created"
+            tests:
+              - not_null
+          - name: "\"Reseller ID\""
+            description: "Unique identifier for the reseller"
+            tests:
+              - not_null
+          - name: "\"Transaction ID\""
+            description: "Unique identifier for the transaction"
+            tests:
+              - not_null
 
       - name: resellers
         description: "Resellers data"
