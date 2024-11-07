@@ -2,10 +2,10 @@
 
 SELECT 
     LOWER(sales_channel) AS sales_channel,
-    INITCAP(customer_first_name) AS customer_first_name,
-    INITCAP(customer_last_name) AS customer_last_name,
+    customer_first_name,
+    customer_last_name,
     LOWER(customer_email) AS customer_email, 
-    INITCAP(series_city) AS series_city,
+    series_city,
     
     CAST(created_date AS TIMESTAMP) AS created_date,
     

@@ -1,8 +1,8 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 SELECT 
     reseller_id,
-    INITCAP(reseller_name) AS reseller_name, 
+    reseller_name, 
     commission_pct
 FROM 
     {{ ref('raw_resellers') }}

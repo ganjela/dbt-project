@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 SELECT 
     REGEXP_REPLACE(product_id, '[^\d]+', '') AS product_id,

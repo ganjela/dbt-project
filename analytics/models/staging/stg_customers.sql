@@ -1,9 +1,9 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 SELECT 
     customer_id,
-    INITCAP(first_name) AS first_name,
-    INITCAP(last_name) AS last_name,
+    first_name,
+    last_name,
     LOWER(email) AS email
 FROM 
     {{ ref('raw_customers') }}
