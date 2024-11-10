@@ -2,7 +2,8 @@
 
 SELECT 
     reseller_id,
-    reseller_name, 
+    {{ init_cap('reseller_name') }} AS reseller_name,
     commission_pct
 FROM 
     {{ ref('raw_resellers') }}
+

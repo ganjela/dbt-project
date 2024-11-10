@@ -2,8 +2,9 @@
 
 SELECT 
     REGEXP_REPLACE(product_id, '[^\d]+', '') AS product_id,
-    name,  
-    city,
+    {{ init_cap('name') }} AS name,
+    {{ init_cap('city') }} AS city,
     price
 FROM 
     {{ ref('raw_products') }}
+
